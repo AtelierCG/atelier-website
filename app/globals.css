@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand colours */
+  --color-navy:       #060B1E;
+  --color-navy-mid:   #0A1230;
+  --color-navy-high:  #0D1640;
+  --color-cyan:       #00D4FF;
+  --color-blue:       #0066FF;
+  --color-blue-bright:#0088FF;
+  --color-violet:     #7B2FFF;
+
+  /* Text */
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #B8C8E8;
+  --color-text-muted:     #5A7099;
+
+  /* Fonts */
+  --font-display: var(--font-syne), 'Syne', sans-serif;
+  --font-sans:    var(--font-dm-sans), 'DM Sans', sans-serif;
+  --font-mono:    var(--font-dm-mono), 'DM Mono', monospace;
+
+  /* Spacing anchors */
+  --spacing-section-desktop: 120px;
+  --spacing-section-mobile:  64px;
+}
+
+/* ─── Base ─────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #060B1E;
+  color: #FFFFFF;
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─── Gradient utilities ───────────────────────────────── */
+.gradient-brand {
+  background: linear-gradient(135deg, #00D4FF 0%, #0066FF 50%, #7B2FFF 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF 0%, #0066FF 50%, #7B2FFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(135deg, #00D4FF 0%, #0066FF 35%, #7B2FFF 70%, #00D4FF 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Glassmorphism card ───────────────────────────────── */
+.glass-card {
+  background: rgba(13, 22, 64, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.1);
+}
+
+/* ─── Nav blur ─────────────────────────────────────────── */
+.nav-blur {
+  background: rgba(6, 11, 30, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+  transition: background 300ms ease;
+}
+
+.nav-blur-solid {
+  background: rgba(6, 11, 30, 0.92);
+}
+
+/* ─── Scroll reveal base state ─────────────────────────── */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ─── Custom cursor ────────────────────────────────────── */
+#cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.4);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 200ms ease;
+  mix-blend-mode: screen;
+}
+
+@media (hover: none) {
+  #cursor-glow { display: none; }
+}
+
+/* ─── Selection colour ─────────────────────────────────── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: #FFFFFF;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #060B1E; }
+::-webkit-scrollbar-thumb { background: #1a2860; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00D4FF33; }
