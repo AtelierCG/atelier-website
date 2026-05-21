@@ -45,7 +45,7 @@ export default function CapabilitiesSection() {
         <ScrollReveal delay={0.08}>
           <h2
             className="text-3xl md:text-4xl font-semibold text-white mb-14"
-            style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.03em" }}
+            style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.03em" }}
           >
             Built for what matters.
           </h2>
@@ -63,7 +63,7 @@ export default function CapabilitiesSection() {
                 </span>
                 <h3
                   className="text-xl font-semibold text-white mb-4 leading-snug"
-                  style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.02em" }}
+                  style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.02em" }}
                 >
                   {cap.title}
                 </h3>

@@ -55,7 +55,7 @@ export default function ContactForm() {
           </div>
           <h2
             className="text-2xl font-semibold text-white mb-3"
-            style={{ fontFamily: "var(--font-syne)" }}
+            style={{ fontFamily: "var(--font-outfit)" }}
           >
             Message received.
           </h2>

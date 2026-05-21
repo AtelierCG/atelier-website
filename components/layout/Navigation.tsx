@@ -113,7 +113,7 @@ export default function Navigation() {
                   <Link
                     href={href}
                     className="text-3xl font-display font-semibold text-white hover:text-cyan transition-colors duration-200"
-                    style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.06em" }}
+                    style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.06em" }}
                   >
                     {label}
                   </Link>

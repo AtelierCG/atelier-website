@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, DM_Mono } from "next/font/google";
+import { Outfit, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import CursorGlow from "@/components/ui/CursorGlow";
 
-const syne = Syne({
-  variable: "--font-syne",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -44,23 +44,18 @@ export const metadata: Metadata = {
     description:
       "At the intersection of Artificial Intelligence and Appreciative Inquiry. Purpose-driven technology that serves humanity.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${dmSans.variable} ${dmMono.variable} h-full`}
+      className={`${outfit.variable} ${dmSans.variable} ${dmMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-navy antialiased">
+      <body className="min-h-full flex flex-col antialiased" style={{ background: "#060B1E" }}>
         <CursorGlow />
         <Navigation />
         <main className="flex-1">{children}</main>

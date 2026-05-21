@@ -28,7 +28,7 @@ export default function ContactPage() {
           <ScrollReveal delay={0.08}>
             <h1
               className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.03em" }}
             >
               If it <span className="gradient-text">resonates</span>,<br />
               let's talk.

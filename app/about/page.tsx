@@ -35,7 +35,7 @@ export default function AboutPage() {
           <ScrollReveal delay={0.08}>
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-              style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.03em" }}
             >
               Built from a <span className="gradient-text">thirty-year synthesis.</span>
             </h1>
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 </p>
                 <h2
                   className="text-2xl font-semibold text-white mb-2"
-                  style={{ fontFamily: "var(--font-syne)" }}
+                  style={{ fontFamily: "var(--font-outfit)" }}
                 >
                   Christian Grancourt
                 </h2>
@@ -164,13 +164,13 @@ export default function AboutPage() {
             <div className="flex items-baseline gap-3 mb-8">
               <span
                 className="text-4xl font-bold gradient-text"
-                style={{ fontFamily: "var(--font-syne)" }}
+                style={{ fontFamily: "var(--font-outfit)" }}
               >
                 AI
               </span>
               <sup
                 className="text-2xl font-bold text-cyan"
-                style={{ fontFamily: "var(--font-syne)" }}
+                style={{ fontFamily: "var(--font-outfit)" }}
               >
                 2
               </sup>
@@ -180,7 +180,7 @@ export default function AboutPage() {
           <ScrollReveal delay={0.08}>
             <h2
               className="text-2xl md:text-3xl font-semibold text-white mb-8 leading-snug"
-              style={{ fontFamily: "var(--font-syne)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "var(--font-outfit)", letterSpacing: "0.03em" }}
             >
               What becomes possible when Artificial Intelligence
               <br className="hidden md:block" />
