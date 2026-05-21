@@ -27,16 +27,23 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-          className="mb-10 md:mb-12"
+          className="relative mb-10 md:mb-12"
         >
           <Image
             src="/images/logo-full.webp"
             alt="Atelier — AI-Driven Development Studio. Purpose-Driven Technology That Serves Humanity."
             width={480}
             height={260}
-            className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto object-contain"
-            style={{ mixBlendMode: "screen" }}
+            className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto object-contain block"
             priority
+          />
+          {/* Vignette overlay — fades the image's baked-in background into the page */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse 82% 78% at 50% 50%, transparent 48%, #060B1E 88%)",
+            }}
           />
         </motion.div>
 
